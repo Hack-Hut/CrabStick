@@ -1,9 +1,10 @@
 <snippet>
   <content><![CDATA[
-# ${1:CrabStick}
-A tool for automatic local and remote file inclusion exploitation 
-## Installation
+# CrabStick
 
+A tool for automatic local and remote file inclusion exploitation 
+
+## Installation
 
 1.  Cookies
 2.  Useragents
