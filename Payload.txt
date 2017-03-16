@@ -1,0 +1,27 @@
+LINUX   ^/etc/issue^                          ^Contains a message or system identification to be printed before the login prompt
+LINUX   ^/proc/version^                       ^Contains linux release version
+LINUX   ^/etc/profile^                        ^Kernel profiling information
+LINUX   ^/etc/passwd^                         ^Juicy user list
+LINUX   ^/etc/shadow^                         ^Password hashes (root)
+LINUX   ^/root/.bash_history^                 ^Root users previous commands (root)
+LINUX   ^/var/log/dmessage^                   ^Ring buffer contents from last successful boot process
+LINUX   ^/var/log/dmesg^                      ^Ring buffer contents from last successful boot process
+LINUX   ^/var/mail/root^                      ^Mail
+LINUX   ^/var/log/auth.log^                   ^SSH authentication log file (can be used for file poisoning to gain RCE)
+LINUX   ^/var/spool/cron/crontabs/root^       ^Root crontab table (root)
+LINUX   ^/etc/php5/cgi/php.ini^               ^PHP info page
+LINUX   ^/etc/group^                          ^User group file
+LINUX   ^/proc/self/environ^                  ^
+
+WIND    ^%SYSTEMROOT%\repair\system^          ^do the rest luke
+WIND    ^%SYSTEMROOT%\repair\SAM^
+WIND    ^%SYSTEMROOT%\repair\SAM^
+WIND    ^%WIN:DIR%\win.ini^
+WIND    ^%SYSTEMDRIVE%\boot.ini^
+WIND    ^%WIN:DIR%\Panther\sysprep.inf^
+
+OSX     ^/etc/fstab^                          ^do the rest luke
+OSX     ^/etc/master.passwd^
+OSX     ^/etc/resolv.conf^
+OSX     ^/etc/sudoers^
+OSX     ^/etc/sysctl.conf^
