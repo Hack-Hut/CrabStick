@@ -1,9 +1,10 @@
 <snippet>
   <content><![CDATA[
 # ${1:CrabStick}
-This python tool is used for remote and local file inclusion attacks.
+A tool for automatic local and remote file inclusion exploitation 
+## Installation
 
-## Features
+
 1.  Cookies
 2.  Useragents
 3.  Proxies
@@ -16,10 +17,12 @@ This python tool is used for remote and local file inclusion attacks.
 10. Awsome ascii art of crabs
 
 ## Aurthor
+
 HackHut
 https://www.youtube.com/channel/UC3OAaHAewLkVPu98DL8FR3g
 
 ## Installation
+
 Install python requests 
 ```
 pip install requests
@@ -49,6 +52,7 @@ Options:
                         Redirect data through a HTTP proxy
   ```
 ## Contributing
+
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
@@ -56,6 +60,7 @@ Options:
 5. Submit a pull request :D
 
 ## License
+
 TODO: Write license
 ]]></content>
   <tabTrigger>readme</tabTrigger>
