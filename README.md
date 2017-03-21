@@ -64,6 +64,7 @@ Options:
 7. Random useragent 
 8. Sleep option to stay under the radar 
 9. Error code analysis 
+10. Reverse shell 
 
 
 ## To Do !
@@ -73,6 +74,7 @@ Options:
 3. Beautiful soup 
 4. Comment code 
 5. Documentation 
+6. Pentest monkey reverse php shell
 
 ### Author
 
