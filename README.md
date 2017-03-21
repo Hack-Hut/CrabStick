@@ -65,6 +65,7 @@ Options:
 8. Sleep option to stay under the radar 
 9. Error code analysis 
 10. Reverse netcat shell 
+11. Handle multiple parameter in a get request
 
 
 ## To Do !
