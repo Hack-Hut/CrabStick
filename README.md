@@ -64,7 +64,7 @@ Options:
 7. Random useragent 
 8. Sleep option to stay under the radar 
 9. Error code analysis 
-10. Reverse shell 
+10. Reverse netcat shell 
 
 
 ## To Do !
