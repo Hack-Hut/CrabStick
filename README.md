@@ -9,6 +9,8 @@ A small python tool for automatic local and remote file inclusion exploitation.
 
 pip install requests
 
+python3 
+
 ## Cloning
 
 ```
