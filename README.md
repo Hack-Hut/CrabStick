@@ -66,6 +66,7 @@ Options:
 9. Error code analysis 
 10. Reverse netcat shell 
 11. Handle multiple parameter in a get request
+12. Works with windows and mac as well 
 
 
 ## To Do !
