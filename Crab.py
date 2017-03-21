@@ -104,8 +104,7 @@ def Testlfi():
                 temp = url.replace(current, "php://filter/convert.base64-encode/resource=")
                 temp = temp + payloadList[pay]
                 test.append(temp)
-            print("tesasdfasdf:", temp)
-
+            
     if verbose:
         outTime(1, "Requests to be sent")
         for m in range(0, len(test)):
