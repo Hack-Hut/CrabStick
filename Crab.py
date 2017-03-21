@@ -97,7 +97,6 @@ def Testlfi():
         for pay in range(0, len(payloadList)):
             current = parametersList[para].split('=')
             current = current[1]
-            print("current " + current)
             temp = url.replace(current, payloadList[pay])
             test.append(temp)
             if filter64:
