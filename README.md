@@ -23,6 +23,11 @@ git clone https://github.com/Hack-Hut/CrabStick.git
 python3 Crab.py -u http://www.somesite.com/include.php?file=3
 ```
 
+## Documentation
+
+[HackHut](http://www.hackhut.co.uk/index.php/2017/03/27/comprehensive-guide-to-exploiting-local-and-remote-file-inclusion/)
+
+
 ## Usage
 ```
 Usage: Crab.py [options]
