@@ -553,7 +553,7 @@ class payloads:
         self.payload = payloadlist
 
 
-if __name__ == main():
+if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
