@@ -2,6 +2,33 @@
 
 A small python tool for automatic local and remote file inclusion exploitation.
 
+Usage of CrabSticks for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+
+# What can it do? 
++Locate LFI/RFI's 
++Perform heuristic testing on the URL 
++Generate payloads for many types of LFI attacks (PHP Wrapper php://filter, PHP Wrapper php://file, PHP Wrapper expect:// LFI, /proc/self/environ LFI Method, /proc/self/fd/ LFI Method, base64 filter bypass)
++Scrape the server response to identify successfull attack
++Crawl website to find potentialy vulnerable URI's (coming soon)
++Brute force path transversal to find root directory
++Dictionary attack on common sys config locations and important files (SSH logs, /etc/passwd, etc) HAIL MARY 
++Custom OS targeting payloads (windows/linux)
++Custom Dictionaries
++Upload reverse TCP shell and start a listener
++Crawl search enginges (Use for research only, default heuristics testing only)
++Custom cookies and useragents (can be random if selected)
++Basic web application firewall evasion techniques
++Proxy settings
++Error code analysis 
++PHP null byte injection
++SSH log poissioning (priv esc)
+
+## What it cannot do
+-Make you coffee
+-Make you l33t hax0r
+
+## Tutorial
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ASkUZuimY3Y/0.jpg)](https://www.youtube.com/watch?v=ASkUZuimY3Y)
 . 
 ![alt text](https://i.gyazo.com/1c8ea2caf7d25124f60635654f6eced6.png "Logo Title Text 1")
 
@@ -25,7 +52,7 @@ python3 Crab.py -u http://www.somesite.com/include.php?file=3
 
 ## Documentation
 
-[HackHut](http://www.hackhut.co.uk/index.php/2017/03/27/comprehensive-guide-to-exploiting-local-and-remote-file-inclusion/)
+[HackHut](http://www.hackhut.co.uk/index.php/2017/03/27/comprehensive-guide-to-exploiting-local-and-remote-file-inclusion/) #Down
 
 
 ## Usage
@@ -58,20 +85,6 @@ Options:
 
 ## What can CrabStick do at the moment? 
 
-1. Perform automatic analyis on multiple get request parameters 
-2. Find the root folder location by performing a file traversal attack
-3. PHP null byte injection
-4. SSH log poisoning to achive remote code execution leading to a reverse shell 
-5. Maliciously craft Useragents (proc/self/environ) to achive remote code execution leading to a reverse shell 
-6. Small dictionary attack (When you want to be quiet)
-7. LARGE dictionary attack (hail mary)
-6. Full HTTP proxy support
-7. Random useragent 
-8. Sleep option to stay under the radar 
-9. Error code analysis 
-10. Reverse netcat shell 
-11. Handle multiple parameter in a get request
-12. Works with windows and mac as well 
 
 
 ## To Do !
