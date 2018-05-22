@@ -2,6 +2,8 @@
 
 A small python tool for automatic local and remote file inclusion exploitation.
 
+![alt text](https://i.gyazo.com/1c8ea2caf7d25124f60635654f6eced6.png "Logo Title Text 1")
+
 Usage of CrabSticks for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
 
 # What can it do? 
@@ -30,7 +32,6 @@ Usage of CrabSticks for attacking targets without prior mutual consent is illega
 ## Tutorial
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ASkUZuimY3Y/0.jpg)](https://www.youtube.com/watch?v=ASkUZuimY3Y)
 . 
-![alt text](https://i.gyazo.com/1c8ea2caf7d25124f60635654f6eced6.png "Logo Title Text 1")
 
 ## Dependencies 
 
