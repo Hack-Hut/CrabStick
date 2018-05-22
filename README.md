@@ -24,8 +24,8 @@ Usage of CrabSticks for attacking targets without prior mutual consent is illega
 17. SSH log poissioning (priv esc)
 
 ## What it cannot do
--Make you coffee
--Make you l33t hax0r
+1. Make you coffee
+2. Make you l33t hax0r
 
 ## Tutorial
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ASkUZuimY3Y/0.jpg)](https://www.youtube.com/watch?v=ASkUZuimY3Y)
@@ -90,7 +90,6 @@ Options:
 ## To Do !
 
 1. Dorks 
-2. Base64 
 3. Beautiful soup 
 4. Comment code 
 5. Documentation 
