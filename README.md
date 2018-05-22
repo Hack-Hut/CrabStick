@@ -5,23 +5,23 @@ A small python tool for automatic local and remote file inclusion exploitation.
 Usage of CrabSticks for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
 
 # What can it do? 
-+Locate LFI/RFI's 
-+Perform heuristic testing on the URL 
-+Generate payloads for many types of LFI attacks (PHP Wrapper php://filter, PHP Wrapper php://file, PHP Wrapper expect:// LFI, /proc/self/environ LFI Method, /proc/self/fd/ LFI Method, base64 filter bypass)
-+Scrape the server response to identify successfull attack
-+Crawl website to find potentialy vulnerable URI's (coming soon)
-+Brute force path transversal to find root directory
-+Dictionary attack on common sys config locations and important files (SSH logs, /etc/passwd, etc) HAIL MARY 
-+Custom OS targeting payloads (windows/linux)
-+Custom Dictionaries
-+Upload reverse TCP shell and start a listener
-+Crawl search enginges (Use for research only, default heuristics testing only)
-+Custom cookies and useragents (can be random if selected)
-+Basic web application firewall evasion techniques
-+Proxy settings
-+Error code analysis 
-+PHP null byte injection
-+SSH log poissioning (priv esc)
+1. Locate LFI/RFI's 
+2. Perform heuristic testing on the URL 
+3. Generate payloads for many types of LFI attacks (PHP Wrapper php://filter, PHP Wrapper php://file, PHP Wrapper expect:// LFI, /proc/self/environ LFI Method, /proc/self/fd/ LFI Method, base64 filter bypass)
+4. Scrape the server response to identify successfull attack
+5. Crawl website to find potentialy vulnerable URI's (coming soon)
+6. Brute force path transversal to find root directory
+7. Dictionary attack on common sys config locations and important files (SSH logs, /etc/passwd, etc) HAIL MARY 
+8. Custom OS targeting payloads (windows/linux)
+9. Custom Dictionaries
+10. Upload reverse TCP shell and start a listener
+11. Crawl search enginges (Use for research only, default heuristics testing only)
+12. Custom cookies and useragents (can be random if selected)
+13. Basic web application firewall evasion techniques
+14. Proxy settings
+15. Error code analysis 
+16. PHP null byte injection
+17. SSH log poissioning (priv esc)
 
 ## What it cannot do
 -Make you coffee
