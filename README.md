@@ -21,7 +21,56 @@ This tool is not designed to be a web servers _best friend_. Remember you need t
 
 This tool is aimed at anyone performing web based security analysis. Although this tool is simple to use it is not aimed at script kiddies. 
 
-### What can the crab do? 
+## Table of Contents
+- Intro
+    - [What is Crabstick](#What is crabstick?)
+    - [Motivation](#Motivation)
+    - [Quick discalimer](#Quick disclaimer)
+    - [Who is this tool aimed at?](#Who is this tool aimed at?)
+- Quick start
+    - [Installation](#Installation)
+    - [Requirements](#Requirements)
+    - [Usage](#Usage)
+    - [Documentation](#Documentation)
+- What can crabstick do?
+    - [Host specification](#How)
+    - [Optimization](#How)
+    - [Advanced Options](#How)
+    - [LFI/RFI Payload Generation](#How)
+    - [Filter Evasion](#How)
+    - [Upgrade local file inclusion to remote code execution](#How)
+    - [Dictionary attack on remote file system](#How)
+    - [Reverse shells](#How)
+- Tested
+    - [Tested with](#Tested)
+- Other 
+    - [Examples](#Examples)
+    - [FAQ](#FAQ)
+    - [Credits](#Credits)
+    - [Licence](#Licence)
+    
+### Installation 
+
+`$ sudo git clone https://github.com/Hack-Hut/CrabStick`
+
+`$ sudo sh setup.sh`
+
+### Requirements 
+1. Requirements are installed with the setup.sh, but if you want to manually do it, you will need the following:
+    * Python (Version 3 and above)
+    * Scrapy 
+    * Beautiful-soup
+    * Requests
+    * Url-lib
+    * Docopt
+
+### Usage 
+`python3 src/crabstick.py --help`
+
+## Documentation
+
+
+### How 
 
 1. **Versatile host specification.** 
     * Single URL
@@ -85,4 +134,6 @@ This tool is aimed at anyone performing web based security analysis. Although th
         * Java reverse shell 
         * Xterm reverse shell 
         * Crabstick basic 
-   
+ 
+ ### Tested 
+ Tested on Ubuntu 4.15.0-36-generic with python 3.6.6
