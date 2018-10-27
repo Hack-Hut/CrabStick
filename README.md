@@ -23,24 +23,24 @@ This tool is aimed at anyone performing web based security analysis. Although th
 
 ### What can the crab do? 
 
-1. Versatile host specification 
+1. **Versatile host specification.** 
     * Single URL
     * List of URL's 
     * Crawler
         * White-list
         * Black-list
-2. Plenty of timing optimization
+2. **Plenty of timing optimization.**
     * Os/web-service  specification to target payloads 
     * Threads
     * Rate limiting 
-3. Plenty of advanced options
+3. **Plenty of advanced options.**
     * Headers 
     * Proxy
     * User-agents 
     * Randomize user-agents 
     * cookies 
     * Proxy 
-4. Generate payloads to exploit local and remote file inclusion
+4. **Generate payloads to exploit local and remote file inclusion.**
     * Directory Transferal
     * Null-byte injection
     * Truncation
@@ -52,11 +52,11 @@ This tool is aimed at anyone performing web based security analysis. Although th
         * php://phar 
         * php://expect 
         * php://input     
-5. Filter evasion
+5. **Filter evasion**
     * Payload encoder
     * Payload double encoder
     * Payload obfuscation 
-6. Upgrade Local file inclusion to remote code execution 
+6. **Upgrade Local file inclusion to remote code execution.** 
     * Log poisioning 
         * Apache
         * Apache2
@@ -64,14 +64,14 @@ This tool is aimed at anyone performing web based security analysis. Although th
         * SSHd
         * Mail
     * PHP cookie session injection 
-7. If Crabsick cannot escilate to RCE, a dictionary attack on sensitive file's can be performed.
+7. **If Crabsick cannot escilate to RCE, a dictionary attack on sensitive file's can be performed.**
     * Use HTTP status codes to find out if the file:
         * Is readable
         * Is does not exist 
         * Is not readable by the current user 
     * Download these files locally for further inspection 
     * Custom dictionary attacks possible.  
-8. Post exploitation remote reverse shell injector 
+8. **Post exploitation remote reverse shell injector.** 
     * Yeah BABY 
     * Types of shells available
         * Pentest monkey
