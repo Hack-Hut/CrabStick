@@ -13,7 +13,7 @@ Crabstick's is designed to handle, look and feel like SQL-map.
 
 The world needed a hacking tool with crab ASCII art, but did't deserve it.  
 
-### Quick disclaimer 
+### Disclaimer 
 
 This tool is not designed to be a web servers _best friend_. Remember you need to abide by the cLAW. Do not use this tool with out multal agreement with the web-servers owners. The developer of this tool accepts no responsibility of the missus of this tool. 
 
@@ -25,7 +25,7 @@ This tool is aimed at anyone performing web based security analysis. Although th
 - Intro
     - [What is Crabstick](#What)
     - [Motivation](#Motivation)
-    - [Quick discalimer](#Quick disclaimer)
+    - [Quick discalimer](#Disclaimer)
     - [Who is this tool aimed at?](#Who?)
 - Quick start
     - [Installation](#Installation)
