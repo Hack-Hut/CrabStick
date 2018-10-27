@@ -2,7 +2,7 @@
 
 ![](temp/Header.gif)
 
-## What is crabstick?
+## What
 
 Crabstick is a HTTP/HTTPS _security vulnerability_ scanner that find's LFI/RFI (local and remote file inclusion) and try's to escalate this to gain a remote reverse shell.
 
@@ -17,16 +17,16 @@ The world needed a hacking tool with crab ASCII art, but did't deserve it.
 
 This tool is not designed to be a web servers _best friend_. Remember you need to abide by the cLAW. Do not use this tool with out multal agreement with the web-servers owners. The developer of this tool accepts no responsibility of the missus of this tool. 
 
-### Who is this tool aimed at?
+### Who
 
 This tool is aimed at anyone performing web based security analysis. Although this tool is simple to use it is not aimed at script kiddies. 
 
 ## Table of Contents
 - Intro
-    - [What is Crabstick](#What is crabstick?)
+    - [What is Crabstick](#What)
     - [Motivation](#Motivation)
     - [Quick discalimer](#Quick disclaimer)
-    - [Who is this tool aimed at?](#Who is this tool aimed at?)
+    - [Who is this tool aimed at?](#Who?)
 - Quick start
     - [Installation](#Installation)
     - [Requirements](#Requirements)
