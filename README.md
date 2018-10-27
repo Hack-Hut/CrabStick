@@ -1,10 +1,7 @@
-Notes:
-Added multi-targeting option    
-Added Better error handling 
-Adding Crawl site option 
-Adding new payloads 
-Adding integrated netcat listener 
-Adding maltreating 
-Adding more post exploitation options 
-Added Colours 
-Adding tamper script options 
+#CRABSTICK-2.0.0
+
+![](temp/Header.gif)
+
+##What is crabstick?
+Crabstick is a HTTP/HTTPS security vulnerability scanner that find's LFI/RFI (local and remote file inclusion) and try's to escalate this to gain a remote reverse shell.
+Crabstick's is designed to handle, look and feel like SQL-map.
