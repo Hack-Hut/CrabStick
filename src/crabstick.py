@@ -31,7 +31,8 @@ Options:
         --agent <agent>                     change user-agents
         --random-agents                     randomize user-agents
         --cookies <cookie:value>            specify cookies
-        --http-header <header>                   specify a header
+        --http-header <header               specify a header
+        --tamper <location.py>              tamper script
     Shell:
         --lport <port>                      specify a local port for the reverse shell to connect back to (defualt 1234)
         --rport <port>                      specify a remote port for the target to open during shell
@@ -85,7 +86,12 @@ class Domain:
         if self.crabrequests.test.target_up(self.url) == 1:
             GenralFunc.pprint("Finding GET parameters", "success")
             self.url_parameters = self.crabrequests.test.urlparse(self.url)
-            GenralFunc.pprint(str(self.url_parameters), "debug")
+            GenralFunc.pprint("Scheme:\t" + str(self.url_parameters.scheme), "debug")
+            GenralFunc.pprint("Netloc:\t" + str(self.url_parameters.netloc), "debug")
+            GenralFunc.pprint("Path:\t" + str(self.url_parameters.path), "debug")
+            GenralFunc.pprint("Params:\t" + str(self.url_parameters.params), "debug")
+            GenralFunc.pprint("Query:\t" + str(self.url_parameters.query), "debug")
+            GenralFunc.pprint("Frag:\t" + str(self.url_parameters.fragment), "debug")
             if self.url_parameters.query:
                 if self.url_parameters.query != "":
                     temp = self.url_parameters.query
@@ -93,18 +99,11 @@ class Domain:
                     GenralFunc.pprint("Target has " + str(len(temp)) + " injectable GET parameters to test.", "success")
                     for x in range(0, len(temp)):
                         self.get_parameters.append(temp[x])
-                        GenralFunc.pprint("GET parameter " + str(x + 1) + ": \t" + temp[x], "success")
+                        GenralFunc.pprint("GET parameter " + str(x + 1) + ": \t" + temp[x], "debug")
                     payload_lfi = PayloadLFI(self.get_parameters, self.url_parameters, self.url, self.php, self.os)
                     payload_lfi.generate_payloads()
-                    payload_lfi.display_payloads()
+                    dirty_urls = payload_lfi.display_payloads()
 
-                    # for x in range(0, len(temp)):
-                    #     GenralFunc.pprint("Generating Payloads for: " + temp[x], "underline")
-                    #     payload_lfi = PayloadLFI(self.get_parameters[x], self.url_parameters, self.url)
-                    #     payload_lfi.directory_transversal()
-                    #     payload_lfi.generic_null_byte()
-#                        payload_lfi.show_payloads()
-                ## ADD POST ATTACKS HERE
             else:
                 GenralFunc.pprint("Target has no injectable GET parameters", "fail")
         else:

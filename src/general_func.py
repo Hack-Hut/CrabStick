@@ -18,6 +18,7 @@ class GenralFunc:
         dim = "\033[2m"
         fatal = "\033[101m"
 
+
         if symbol == False:
             if mode == "debug":
                 code = debug
@@ -48,16 +49,16 @@ class GenralFunc:
 
         if mode == "debug":
             code = debug
-            print("[" + code + "D" + reset + "]"  +  time  + "[" + code + "DEBUG" + reset + "]\t" + code + text + reset)
+            print("[" + code + "D" + reset + "]"  +  time  + "[" + code + "BUG" + reset + "]\t" + code + text + reset)
         if mode == "success":
             code = success
             print("[" + code + "+" + reset + "]"  +  time +  "[" + code + "OK" + reset + "]\t" + code + text + reset)
         if mode == "blink":
             code = blink
-            print("[ ]"  +  time + code + text + reset)
+            print("[" + code + "+" + reset + "]"  +  time +  "[" + code + "OK" + reset + "]\t" + code + text + reset)
         if mode == "bold":
             code = bold
-            print("[ ]"  +  time + code + text + reset)
+            print("[" + code + "+" + reset + "]"  +  time +  "[" + code + "OK" + reset + "]\t" + code + text + reset)
         if mode == "underline":
             code = underline
             print("-"* 65 + "\n[" + code + "*" + reset + "]"  +  time  + code + "----" + text + reset)
@@ -70,5 +71,10 @@ class GenralFunc:
         if mode == "fatal":
             code = fatal
             print("[" + fail + "!" + reset + "]" +  time  + "[" + fail   + "FATAL" + reset + "]\t" + code + text + reset)
+        if mode == "dim":
+            code = dim
+            print("[" + code + "!" + reset + "]" +  time  + "[" + fail   + "INFO" + reset + "]\t" + code + text + reset)
+        if mode == "flush":
+            print("[" + fail + "!" + reset + "]" +  time  + "[" + fail   + "INFO" + reset + "]\t" + fail + text + reset, end="")
         if mode == "normal":
             print("[ ]"  +  time + "[INFO]\t" + text)

