@@ -23,7 +23,6 @@ class CrabRequests:
             :param url: URL to parse
             :return: A dictionary of parameters
             """
-            print(type(urlparse.urlparse(url)))
             return urlparse.urlparse(url)
 
 

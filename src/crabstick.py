@@ -50,7 +50,7 @@ import subprocess
 
 from general_func import GenralFunc
 from crab_requests import *
-
+from payload_lfi import *
 
 class Domain:
     def __init__(self, docopt, url=False):
@@ -76,16 +76,35 @@ class Domain:
         self.verbose = docopt["--verbose"]
         self.white_list = docopt["--white-list"]
         self.filter = docopt["-f"]
-        self.get_parameters = None
+        self.get_parameters = []
+        self.url_parameters = None
         GenralFunc.pprint("Target aquired: " + self.url, "underline")
         self.crabrequests = CrabRequests(self.url)
 
     def start(self):
         if self.crabrequests.test.target_up(self.url) == 1:
             GenralFunc.pprint("Finding GET parameters", "success")
-            self.get_parameters = self.crabrequests.test.urlparse(self.url)
-            if self.get_parameters != None:
-                pass
+            self.url_parameters = self.crabrequests.test.urlparse(self.url)
+            GenralFunc.pprint(str(self.url_parameters), "debug")
+            if self.url_parameters.query:
+                if self.url_parameters.query != "":
+                    temp = self.url_parameters.query
+                    temp = temp.split("&")
+                    GenralFunc.pprint("Target has " + str(len(temp)) + " injectable GET parameters to test.", "success")
+                    for x in range(0, len(temp)):
+                        self.get_parameters.append(temp[x])
+                        GenralFunc.pprint("GET parameter " + str(x + 1) + ": \t" + temp[x], "success")
+                    payload_lfi = PayloadLFI(self.get_parameters, self.url_parameters, self.url, self.php, self.os)
+                    payload_lfi.generate_payloads()
+                    payload_lfi.display_payloads()
+
+                    # for x in range(0, len(temp)):
+                    #     GenralFunc.pprint("Generating Payloads for: " + temp[x], "underline")
+                    #     payload_lfi = PayloadLFI(self.get_parameters[x], self.url_parameters, self.url)
+                    #     payload_lfi.directory_transversal()
+                    #     payload_lfi.generic_null_byte()
+#                        payload_lfi.show_payloads()
+                ## ADD POST ATTACKS HERE
             else:
                 GenralFunc.pprint("Target has no injectable GET parameters", "fail")
         else:
@@ -135,15 +154,15 @@ def check_env():
                 GenralFunc.pprint("try: 'git pull' to check", "warning")
             return arguments
         else:
-            GenralFunc.pprint("Looks like we have left to do", "fail")
+            GenralFunc.pprint("Looks like we have nothing left to do", "fail")
 
 
 def banner():
     """Ascii art"""
-    GenralFunc.pprint("           ,____,", "bold", symbol=False)
+    GenralFunc.pprint("           .____.", "bold", symbol=False)
     GenralFunc.pprint("      \)__/\ " "\033[5m" + "oo " + "\033[;0m\033[1m" + "/\__(/", "bold", symbol=False)
-    GenralFunc.pprint("        _/\/____\/\_", "bold", symbol=False)
-    GenralFunc.pprint("________  /      \_    ___.     _________ __   __        __    ", "bold", symbol=False)
+    GenralFunc.pprint("        _/\/_~__\/\_", "bold", symbol=False)
+    GenralFunc.pprint("________ _/      \_    ___.     _________ __   __        __    ", "bold", symbol=False)
     GenralFunc.pprint("\_   ___\ " + "\033[92m" + "HACK_HUT" + "\033[;0m\033[1m" + " __ \_ |__  /   _____//  |_|__| ____ |  | __", "bold", symbol=False)
     GenralFunc.pprint("/    \  \/\_  __ \__  \ | __ \ \_____  \\   __\  |/ ___\|  |/ /", "bold", symbol=False)
     GenralFunc.pprint("\     \____|  | \// __ \| \_\ \/        \|  | |  \  \___|    < ", "bold", symbol=False)

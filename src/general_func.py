@@ -44,14 +44,14 @@ class GenralFunc:
                 print(text)
             return
 
-        time = dim +  "[{0}] ". format(strftime("%H:%M:%S", gmtime())) +  reset
+        time = dim +  "[{0}]". format(strftime("%H:%M:%S", gmtime())) +  reset
 
         if mode == "debug":
             code = debug
-            print("[" + code + "D" + reset + "]"  +  time  + code + text + reset)
+            print("[" + code + "D" + reset + "]"  +  time  + "[" + code + "DEBUG" + reset + "]\t" + code + text + reset)
         if mode == "success":
             code = success
-            print("[" + code + "+" + reset + "]"  +  time + code + text + reset)
+            print("[" + code + "+" + reset + "]"  +  time +  "[" + code + "OK" + reset + "]\t" + code + text + reset)
         if mode == "blink":
             code = blink
             print("[ ]"  +  time + code + text + reset)
@@ -63,12 +63,12 @@ class GenralFunc:
             print("-"* 65 + "\n[" + code + "*" + reset + "]"  +  time  + code + "----" + text + reset)
         if mode == "warning":
             code = warning
-            print("[" + code + "-" + reset + "]" +  time  + code + text + reset)
+            print("[" + code + "-" + reset + "]" +  time  + "[" + code + "WARNING" + reset + "]" +  code + text + reset)
         if mode == "fail":
             code = fail
-            print("[" + code + "!" + reset + "]" +  time  + code + text + reset)
+            print("[" + code + "!" + reset + "]" +  time  + "[" + code + "FAILURE" + reset + "]" + code + text + reset)
         if mode == "fatal":
             code = fatal
-            print("[" + code + "!" + reset + "]" +  time  + code + text + reset)
+            print("[" + fail + "!" + reset + "]" +  time  + "[" + fail   + "FATAL" + reset + "]\t" + code + text + reset)
         if mode == "normal":
-            print("[ ]"  +  time  + text)
+            print("[ ]"  +  time + "[INFO]\t" + text)
