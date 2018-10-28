@@ -1,6 +1,7 @@
 # CRABSTICK-2.0.0
-
+![](https://camo.githubusercontent.com/13c4e50d88df7178ae1882a203ed57b641674f94/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667)
 ![](temp/Header.gif)
+
 
 ## What
 
@@ -137,3 +138,14 @@ This tool is aimed at anyone performing web based security analysis. Although th
  
  ### Tested 
  Tested on Ubuntu 4.15.0-36-generic with python 3.6.6
+ 
+ ### Credit 
+ Windows Local-File-Inclusion
+ * https://blog.rapid7.com/2016/07/29/pentesting-in-the-real-world-local-file-inclusion-with-windows-server-files/
+ 
+ 
+ Local file inclusion cheat-sheets  
+ * https://github.com/swisskyrepo/PayloadsAllTheThings/
+ * https://highon.coffee/blog/lfi-cheat-sheet/
+ 
+ 

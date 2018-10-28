@@ -1,2 +1,2 @@
 Python3:
-    Scrapy, Requests, docopt, pyspeedtest
+    Scrapy, Requests, docopt, tqdm, urllib
