@@ -71,8 +71,7 @@ This tool is aimed at anyone performing web based security analysis. Although th
 `python3 src/crabstick.py --help`
 
 ## Documentation
-
-(Work in progress)
+https://github.com/Hack-Hut/CrabStick/wiki/Home/
 
 ### How 
 
