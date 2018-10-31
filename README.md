@@ -72,32 +72,32 @@ This tool is aimed at anyone performing web based security analysis. Although th
 
 ## Documentation
 
+(Work in progress)
 
 ### How 
 
 1. **Versatile host specification.** 
-    * Single URL
-    * List of URL's 
-    * Crawler
+    * Single URL 
+    * List of URL's (Work in progress) 
+    * Crawler (Work in progress)
         * White-list
         * Black-list
 2. **Plenty of timing optimization.**
     * Os/web-service  specification to target payloads 
     * Threads
-    * Rate limiting 
+    * Rate limiting (Work in progress)
 3. **Plenty of advanced options.**
-    * Headers 
-    * Proxy
-    * User-agents 
-    * Randomize user-agents 
+    * Headers (Work in progress)
+    * Proxy (Work in progress)
+    * User-agents (Work in progress)
+    * Randomize user-agents (Work in progress)
     * cookies 
-    * Proxy 
 4. **Generate payloads to exploit local and remote file inclusion.**
     * Directory Transferal
     * Null-byte injection
     * Truncation
     * Remote File inclusion
-    * Wrappers
+    * Wrappers (Work in progress)
         * php://filter 
         * php://zip 
         * php://data 
@@ -109,15 +109,15 @@ This tool is aimed at anyone performing web based security analysis. Although th
     * Payload double encoder
     * Payload obfuscation 
 6. **Upgrade Local file inclusion to remote code execution.** 
-    * Log poisioning 
+    * Log poisioning (Work in progress)
         * Apache
         * Apache2
         * Vsftpd
         * SSHd
         * Mail
-    * PHP cookie session injection 
+    * PHP cookie session injection (Work in progress)
 7. **If Crabsick cannot escilate to RCE, a dictionary attack on sensitive file's can be performed.**
-    * Use HTTP status codes to find out if the file:
+    * Use HTTP status codes to find out if the file:(Work in progress)
         * Is readable
         * Is does not exist 
         * Is not readable by the current user 
@@ -125,7 +125,7 @@ This tool is aimed at anyone performing web based security analysis. Although th
     * Custom dictionary attacks possible.  
 8. **Post exploitation remote reverse shell injector.** 
     * Yeah BABY 
-    * Types of shells available
+    * Types of shells available (Work in progress)
         * Pentest monkey
         * Metasploit multi-handler 
         * Netcat reverse shell
@@ -137,6 +137,17 @@ This tool is aimed at anyone performing web based security analysis. Although th
         * Java reverse shell 
         * Xterm reverse shell 
         * Crabstick basic 
+9. **Generate file that contain embeded PHP code that can bypass AV dettection.
+    * Images (Work in progress)
+        * PNG
+        * JPEG
+        * Gif
+    * PDF's  (Work in progress)
+    * Audio (Work in progress)
+        * MP3
+        * Wav
+    * Power-Point (Work in progress)
+    
  
  ### Tested 
  Tested on Ubuntu 4.15.0-36-generic with python 3.6.6
@@ -145,9 +156,10 @@ This tool is aimed at anyone performing web based security analysis. Although th
  Windows Local-File-Inclusion
  * https://blog.rapid7.com/2016/07/29/pentesting-in-the-real-world-local-file-inclusion-with-windows-server-files/
  
- 
  Local file inclusion cheat-sheets  
  * https://github.com/swisskyrepo/PayloadsAllTheThings/
  * https://highon.coffee/blog/lfi-cheat-sheet/
  
+ ### Advanced remote file inclusion demo
+ * https://media.blackhat.com/bh-eu-12/Be'ery/bh-eu-12-Be'ery-FYI_you_got_LFI-WP.pdf 
  
